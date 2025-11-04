@@ -1,0 +1,16 @@
+# Entorno virtual
+venv/
+
+# Archivos de sistema
+.DS_Store
+
+# Configuración local de dbt
+~/.dbt/
+dbt_packages/
+
+# Datos persistentes de PostgreSQL
+postgres_data/
+
+# Archivos temporales
+*.log
+*.tmp
