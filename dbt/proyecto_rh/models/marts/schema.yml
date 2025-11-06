@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim_empleados
+    description: "Dimensión con la información de los empleados."
+    columns:
+      - name: id_empleado
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_ausentismo
+    description: "Hecho que registra los días de ausencia de los empleados."
+    columns:
+      - name: id_ausencia
+        tests:
+          - unique
+          - not_null
+      - name: id_empleado
+        tests:
+          - relationships:
+              to: ref('dim_empleados')
+              field: id_empleado
+
+  - name: fct_capacitacion
+    description: "Hecho que contiene las capacitaciones realizadas por los empleados."
+    columns:
+      - name: id_capacitacion
+        tests:
+          - unique
+          - not_null
+      - name: id_empleado
+        tests:
+          - relationships:
+              to: ref('dim_empleados')
+              field: id_empleado

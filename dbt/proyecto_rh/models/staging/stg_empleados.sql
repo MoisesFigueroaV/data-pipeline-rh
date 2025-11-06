@@ -1,9 +1,17 @@
-select
-    id_empleado,
-    nombre,
-    apellido,
-    area,
-    cast(fecha_ingreso as date) as fecha_ingreso,
-    genero,
-    edad
-from {{ source('public', 'empleados') }}
+with source as (
+    select * from {{ source('public', 'empleados') }}
+),
+
+cleaned as (
+    select
+        id_empleado,
+        initcap(nombre) as nombre,
+        initcap(apellido) as apellido,
+        upper(area) as area,
+        to_date(fecha_ingreso, 'YYYY-MM-DD') as fecha_ingreso,
+        genero,
+        edad
+    from source
+)
+
+select * from cleaned;
