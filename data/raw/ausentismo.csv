@@ -1,0 +1,4 @@
+id_ausencia,id_empleado,fecha_inicio,fecha_fin,tipo
+1,1,2024-05-01,2024-05-03,Licencia médica
+2,2,2024-06-10,2024-06-11,Permiso personal
+3,4,2024-06-01,2024-06-05,Vacaciones

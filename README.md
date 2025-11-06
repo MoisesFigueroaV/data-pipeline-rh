@@ -1,17 +1,17 @@
-# 🧠 Data Pipeline RH
+# Data Pipeline RH
 
 Este proyecto tiene como objetivo construir un **Data Pipeline completo para el área de Recursos Humanos (RH)**, simulando un entorno profesional de **Ingeniería de Datos**.  
 Se trabajará con herramientas modernas como **dbt**, **PostgreSQL**, **Docker** y **Python**, siguiendo buenas prácticas de modelado, versionamiento y automatización.
 
 ---
 
-## 🚀 Objetivo General
+## Objetivo General
 
 Diseñar y desarrollar un pipeline de datos **escalable y modular**, que permita transformar datos brutos del área de Recursos Humanos en modelos analíticos listos para visualización (dashboards, BI, etc.).
 
 ---
 
-## 🧩 Tecnologías Principales
+## Tecnologías Principales
 
 | Componente | Descripción |
 |-------------|--------------|
@@ -23,7 +23,7 @@ Diseñar y desarrollar un pipeline de datos **escalable y modular**, que permita
 
 ---
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```bash
 data-pipeline-rh/
@@ -47,3 +47,24 @@ data-pipeline-rh/
 ├── docker-compose.yml        # Contenedor PostgreSQL
 ├── requirements.txt          # Dependencias del entorno virtual
 └── README.md                 # Documentación principal del proyecto
+
+# Arquitectura
+
++-------------------+
+|   Raw Sources     |
+| (CSV, API, etc.)  |
++---------+---------+
+          |
+          ▼
++-------------------+
+|  Staging Layer    |
+| (dbt: stg_*)      |
+| Limpieza y tests  |
++---------+---------+
+          |
+          ▼
++-------------------+
+| Analytics Layer   |
+| (dbt: dim_*, fct_*) |
+| Modelado analítico |
++-------------------+

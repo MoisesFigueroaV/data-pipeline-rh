@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: public
+    description: "Tablas base provenientes del sistema RH."
+    tables:
+      - name: empleados
+      - name: ausentismo
+      - name: capacitacion
+
+models:
+  - name: stg_empleados
+    description: "Datos limpios y tipados de empleados del área RH."
+    columns:
+      - name: id_empleado
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_ausentismo
+    description: "Datos limpios de ausentismo laboral."
+    columns:
+      - name: id_ausencia
+        tests:
+          - not_null
+          - unique
+      - name: id_empleado
+        tests:
+          - relationships:
+              to: ref('stg_empleados')
+              field: id_empleado
+
+  - name: stg_capacitacion
+    description: "Datos de capacitaciones del personal."
+    columns:
+      - name: id_capacitacion
+        tests:
+          - not_null
+          - unique
+      - name: id_empleado
+        tests:
+          - relationships:
+              to: ref('stg_empleados')
+              field: id_empleado

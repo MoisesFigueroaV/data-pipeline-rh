@@ -1,0 +1,5 @@
+id_empleado,nombre,apellido,area,fecha_ingreso,genero,edad
+1,Juan,Pérez,Producción,2018-03-01,M,34
+2,Ana,Gómez,Recursos Humanos,2020-07-15,F,28
+3,Pedro,López,TI,2019-11-20,M,31
+4,María,Rodríguez,Producción,2017-05-02,F,37
