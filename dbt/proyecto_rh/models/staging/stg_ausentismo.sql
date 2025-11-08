@@ -12,4 +12,4 @@ cleaned as (
     from source
 )
 
-select * from cleaned;
+select * from cleaned

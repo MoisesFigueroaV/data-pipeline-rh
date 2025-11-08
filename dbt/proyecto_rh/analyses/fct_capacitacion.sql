@@ -11,4 +11,4 @@ SELECT
     (c.fecha_termino - c.fecha_inicio) AS duracion_dias
 FROM {{ ref('stg_capacitacion') }} c
 LEFT JOIN {{ ref('stg_empleados') }} e
-    ON c.id_empleado = e.id_empleado;
+    ON c.id_empleado = e.id_empleado

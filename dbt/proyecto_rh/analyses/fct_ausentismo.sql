@@ -11,4 +11,4 @@ SELECT
     (a.fecha_termino - a.fecha_inicio) AS dias_ausencia
 FROM {{ ref('stg_ausentismo') }} a
 LEFT JOIN {{ ref('stg_empleados') }} e
-    ON a.id_empleado = e.id_empleado;
+    ON a.id_empleado = e.id_empleado

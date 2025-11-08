@@ -7,4 +7,4 @@ SELECT
     CURRENT_DATE AS fecha_actualizacion
 FROM {{ ref('stg_empleados') }} e
 WHERE e.estado = 'Activo'
-GROUP BY e.area, e.genero;
+GROUP BY e.area, e.genero
