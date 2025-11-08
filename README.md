@@ -25,7 +25,6 @@ Diseñar y desarrollar un pipeline de datos **escalable y modular**, que permita
 
 ## 🗂️ Estructura del Proyecto
 
-```bash
 data-pipeline-rh/
 ├── dbt/
 │   ├── proyecto_rh/          # Proyecto principal dbt
